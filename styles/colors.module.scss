@@ -1,0 +1,109 @@
+// Type colors:
+
+$type-bug: #8CB230;
+$type-dark: #58575F;
+$type-dragon: #0F6AC0;
+$type-electric: #EED535;
+$type-fairy: #ED6EC7;
+$type-fighting: #D04164;
+$type-fire: #FD7D24;
+$type-flying: #748FC9;
+$type-ghost: #556AAE;
+$type-grass: #62B957;
+$type-ground: #DD7748;
+$type-ice: #61CEC0;
+$type-normal: #9DA0AA;
+$type-poison: #A552CC;
+$type-psychic: #EA5D60;
+$type-rock: #BAAB82;
+$type-steel: #417D9A;
+$type-water: #4A90DA;
+
+:export {
+  bugType: $type-bug;
+  darkType: $type-dark;
+  dragonType: $type-dragon;
+  electricType: $type-electric;
+  fairyType: $type-fairy;
+  fightingType: $type-fighting;
+  fireType: $type-fire;
+  flyingType: $type-flying;
+  ghostType: $type-ghost;
+  grassType: $type-grass;
+  groundType: $type-ground;
+  iceType: $type-ice;
+  normalType: $type-normal;
+  poisonType: $type-poison;
+  psychicType: $type-psychic;
+  rockType: $type-rock;
+  steelType: $type-steel;
+  waterType: $type-water;
+}
+
+// Background type colors:
+
+$background-type-bug: #8BD674;
+$background-type-dark: #6F6E78;
+$background-type-dragon: #7383B9;
+$background-type-electric: #F2CB55;
+$background-type-fairy: #EBA8C3;
+$background-type-fighting: #EB4971;
+$background-type-fire: #FFA756;
+$background-type-flying: #83A2E3;
+$background-type-ghost: #8571BE;
+$background-type-grass: #8BBE8A;
+$background-type-ground: #F78551;
+$background-type-ice: #91D8DF;
+$background-type-normal: #B5B9C4;
+$background-type-poison: #9F6E97;
+$background-type-psychic: #FF6568;
+$background-type-rock: #D4C294;
+$background-type-steel: #4C91B2;
+$background-type-water: #58ABF6;
+
+:export {
+  bugTypeBackground: $background-type-bug;
+  darkTypeBackground: $background-type-dark;
+  dragonTypeBackground: $background-type-dragon;
+  electricTypeBackground: $background-type-electric;
+  fairyTypeBackground: $background-type-fairy;
+  fightingTypeBackground: $background-type-fighting;
+  fireTypeBackground: $background-type-fire;
+  flyingTypeBackground: $background-type-flying;
+  ghostTypeBackground: $background-type-ghost;
+  grassTypeBackground: $background-type-grass;
+  groundTypeBackground: $background-type-ground;
+  iceTypeBackground: $background-type-ice;
+  normalTypeBackground: $background-type-normal;
+  poisonTypeBackground: $background-type-poison;
+  psychicTypeBackground: $background-type-psychic;
+  rockTypeBackground: $background-type-rock;
+  steelTypeBackground: $background-type-steel;
+  waterTypeBackground: $background-type-water;
+}
+
+// General background colors:
+
+$background-white: #FFFFFF;
+$background-default-input: #F2F2F2;
+$background-pressed-input: #E2E2E2;
+$background-modal: #17171B50;
+
+:export {
+  whiteBackground: $background-white;
+  defaultInputBackground: $background-default-input;
+  pressedInputBackground: $background-pressed-input;
+  modalBackground: $background-modal;
+}
+
+// Gradients:
+
+$white-0: #FFFFFF00;
+$white-3: #FFFFFF30;
+
+
+$gradient-vector: linear-gradient(to bottom, $white-3, $white-0);
+
+:export {
+  vectorGradient: $gradient-vector;
+}
