@@ -1,3 +1,16 @@
+// Text colors:
+$text-white: #FFFFFF;
+$text-black: #17171B;
+$text-grey: #747476;
+$text-number: #17171b60;
+
+:export {
+  whiteText: $text-white;
+  blackText: $text-black;
+  greyText: $text-grey;
+  numberText: $text-number;
+}
+
 // Type colors:
 
 $type-bug: #8CB230;
@@ -99,11 +112,52 @@ $background-modal: #17171B50;
 // Gradients:
 
 $white-0: #FFFFFF00;
+$white-1: #FFFFFF10;
 $white-3: #FFFFFF30;
-
+$white-35: #FFFFFF35;
+$light-grey: #F5F5F5;
+$light-grey-0: #F5F5F500;
+$grey: #E5E5E5;
+$dark-grey: #ECECEC;
 
 $gradient-vector: linear-gradient(to bottom, $white-3, $white-0);
+$gradient-pokeball: linear-gradient(to bottom, $light-grey, $text-white);
+$gradient-vector-grey: linear-gradient(to bottom right, $grey, $light-grey-0);
+$gradient-pokeball-grey: linear-gradient(to bottom right, $dark-grey, $light-grey);
+$gradient-vector-white: linear-gradient(to bottom right, $white-3, $white-0);
+$gradient-pokeball-white: linear-gradient(to bottom right, $white-1, $white-0);
+$gradient-pokemon-name: linear-gradient(to bottom, $white-3, $white-0);
+$gradient-pokemon-circle: linear-gradient(to bottom, $white-0, $white-35);
 
 :export {
   vectorGradient: $gradient-vector;
+  pokeballGradient: $gradient-pokeball;
+  vectorGreyGradient: $gradient-vector-grey;
+  pokeballWhiteGradient: $gradient-pokeball-grey;
+  vectorWhiteGradient: $gradient-vector-white;
+  pokemonNameGradient: $gradient-pokemon-name;
+  pokemonCircleGradient: $gradient-pokemon-circle;
+
+}
+
+// Height colors:
+$height-short: #FFC5E6;
+$height-medium: #AEBFD7;
+$height-tall: #AAACB8;
+
+:export {
+  shortHeight: $height-short;
+  mediumHeight: $height-medium;
+  tallHeight: $height-tall;
+}
+
+// Weight colors:
+$weight-light: #99CD7C;
+$weight-normal: #57B2DC;
+$weight-heavy: #5A92A5;
+
+:export {
+  lightWeight: $weight-light;
+  normalWeight: $weight-normal;
+  heavyWeight: $weight-heavy;
 }

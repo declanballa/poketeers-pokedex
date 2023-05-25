@@ -1,6 +1,12 @@
-import React from 'react';
+'use client';
 
-import layout from 'styles/layout.module.scss';
+import React from 'react';
+import { Provider } from 'react-redux';
+
+import { roboto } from '../assets/fonts/roboto';
+import { appStore } from 'state/app.store';
+
+import styles from '@styles/layout.module.scss';
 
 export default function RootLayout({
 	children,
@@ -9,8 +15,13 @@ export default function RootLayout({
 }) {
 	return (
 		<html
-			lang="en">
-			<body className={ layout.main }>{ children }</body>
+			lang="en"
+			className={ roboto.className }>
+			<body className={ styles.main }>
+				<Provider store={ appStore }>
+					{ children }
+				</Provider>
+			</body>
 		</html>
 	);
 }
