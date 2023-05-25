@@ -9,19 +9,19 @@ import { appStore } from 'state/app.store';
 import styles from '@styles/layout.module.scss';
 
 export default function RootLayout({
-	children,
+  children,
 }: {
   children: React.ReactNode;
 }) {
-	return (
-		<html
-			lang="en"
-			className={ roboto.className }>
-			<body className={ styles.main }>
-				<Provider store={ appStore }>
-					{ children }
-				</Provider>
-			</body>
-		</html>
-	);
+  return (
+    <html
+      lang="en"
+      className={ roboto.className }>
+      <body className={ styles.main }>
+        <Provider store={ appStore }>
+          { children }
+        </Provider>
+      </body>
+    </html>
+  );
 }
