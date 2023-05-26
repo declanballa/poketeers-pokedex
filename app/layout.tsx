@@ -15,8 +15,8 @@ export default function RootLayout({
 }) {
   return (
     <html
-      lang="en"
-      className={ roboto.className }>
+      className={ roboto.className }
+      lang="en">
       <body className={ styles.main }>
         <Provider store={ appStore }>
           { children }

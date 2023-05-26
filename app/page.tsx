@@ -10,15 +10,15 @@ export default function Page() {
         Poketeers! - Pokedex
       </h1>
       <Button
-        type={ 'primary' }
-        labelText={ 'Search' } />
+        labelText={ 'Search' }
+        type={ 'primary' } />
       <br />
       <br />
       <br />
       <br />
       <Button
-        type={ 'secondary' }
-        labelText={ 'Cancel' } />
+        labelText={ 'Cancel' }
+        type={ 'secondary' } />
     </div>
   );
 }

@@ -8,12 +8,12 @@ import { rootEpic } from './epics/root.epic';
 const epicMiddleware = createEpicMiddleware();
 
 const rootReducer = combineReducers({
-	pokemon: pokemonReducer
+  pokemon: pokemonReducer
 });
 
 export const store = configureStore({
-	reducer: rootReducer,
-	middleware: [epicMiddleware],
+  reducer: rootReducer,
+  middleware: [epicMiddleware],
 });
 
 epicMiddleware.run(rootEpic);

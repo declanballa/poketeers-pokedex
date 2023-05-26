@@ -10,31 +10,31 @@ export interface PokemonState {
 }
 
 const initialState: PokemonState = {
-	records: [],
-	fetching: false
+  records: [],
+  fetching: false
 } as PokemonState;
 
 const pokemonReducer = createReducer(initialState, (builder) => {
-	builder
-		.addCase(
-			pokemonActions.GetPokemonBySearchQuery,
-			(state: PokemonState) => {
-				state.fetching = true;
-			}
-		)
-		.addCase(
-			pokemonActions.GetPokemonBySearchQuerySuccess,
-			(state: PokemonState, action) => {
-				state.fetching = false;
-				state.records = action.payload.pokemon;
-			}
-		)
-		.addCase(
-			pokemonActions.GetPokemonBySearchQueryFailure,
-			(state: PokemonState) => {
-				state.fetching = false;
-			}
-		);
+  builder
+    .addCase(
+      pokemonActions.GetPokemonBySearchQuery,
+      (state: PokemonState) => {
+        state.fetching = true;
+      }
+    )
+    .addCase(
+      pokemonActions.GetPokemonBySearchQuerySuccess,
+      (state: PokemonState, action) => {
+        state.fetching = false;
+        state.records = action.payload.pokemon;
+      }
+    )
+    .addCase(
+      pokemonActions.GetPokemonBySearchQueryFailure,
+      (state: PokemonState) => {
+        state.fetching = false;
+      }
+    );
 });
 
 export default pokemonReducer;
