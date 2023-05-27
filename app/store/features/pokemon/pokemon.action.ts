@@ -1,5 +1,8 @@
+'use client';
+
 import { createAction } from '@reduxjs/toolkit';
-import { Pokemon } from 'models/pokemon.model';
+import { Pokemon } from 'pokenode-ts';
+import { AjaxError } from 'rxjs/ajax';
 
 export const GetPokemonBySearchQuery =
   createAction(
@@ -27,5 +30,12 @@ export const GetPokemonBySearchQuerySuccess =
 
 export const GetPokemonBySearchQueryFailure =
   createAction(
-    '[POKEMON] Getting Pokemon by search query failed'
+    '[POKEMON] Getting Pokemon by search query failed',
+    function prepare(error: AjaxError) {
+      return {
+        payload: {
+          error
+        }
+      };
+    }
   );

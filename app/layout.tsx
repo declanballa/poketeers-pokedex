@@ -1,10 +1,10 @@
 'use client';
 
 import React from 'react';
-import { Provider } from 'react-redux';
+import 'rxjs';
 
 import { roboto } from '../assets/fonts/roboto';
-import { appStore } from 'state/app.store';
+import { Providers } from './store/provider';
 
 import styles from '@styles/layout.module.scss';
 
@@ -13,14 +13,15 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+
   return (
     <html
       className={ roboto.className }
       lang="en">
       <body className={ styles.main }>
-        <Provider store={ appStore }>
-          { children }
-        </Provider>
+        <Providers>
+          {children}
+        </Providers>
       </body>
     </html>
   );

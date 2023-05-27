@@ -9,7 +9,9 @@
     "paths": {
       "@styles/*": ["styles/*"],
       "@components/*": ["components/*"],
-      "@state/*": ["state/*"]
+      "@store/*": ["app/store/*"],
+      "@models/*": ["app/models/*"],
+      "@services/*": ["app/services/*"]
     },
     "allowJs": true,
     "skipLibCheck": true,
