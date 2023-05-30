@@ -4,20 +4,22 @@ import { PokemonSandboxService } from '@services/sandbox/pokemon-sandbox.service
 import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 
+import styles from '@styles/details.module.scss';
+
 
 const pokemonSandboxService = new PokemonSandboxService();
 
 export default function Details() {
-  const [selectedPokemon, setSelectedPokemon] = useState({name: 'none'});
+  const [selectedPokemon, setSelectedPokemon] = useState({ name: 'none' });
   const selected = useSelector(pokemonSandboxService.pokemonSelected);
 
   useEffect(() => {
-    setSelectedPokemon(selectedPokemon);
-  }, [selectedPokemon]);
+    setSelectedPokemon(selected);
+  }, [selected]);
 
   return (
-    <div>
-      { selected.name }
+    <div className={ styles.main }>
+      { selectedPokemon.name }
     </div>
   );
 }
