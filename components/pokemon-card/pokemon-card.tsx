@@ -2,10 +2,10 @@
 import { Pokemon, PokemonType } from 'pokenode-ts';
 
 import { TypeBadge } from '@components/type-badge/type-badge';
-import styles from './pokemon-card.module.scss';
+import styles from '@styles/pokemon-card.module.scss';
 import colors from '@styles/colors.module.scss';
 
-export const PokemonCard = ({ pokemon }: { pokemon: Pokemon }) => {
+export const PokemonCard = ({ pokemon, setSelectedPokemon }: { pokemon: Pokemon, setSelectedPokemon }) => {
   const types = pokemon.types.map((type: PokemonType) => type.type.name);
   let numberPrefix = '#';
 
@@ -14,10 +14,15 @@ export const PokemonCard = ({ pokemon }: { pokemon: Pokemon }) => {
   } else if (pokemon.id > 9 && pokemon.id < 100) {
     numberPrefix = '#0';
   }
+
+  const selectedPokemon = () => {
+    setSelectedPokemon(pokemon);
+  };
   
   return (
     <div
       className={ styles.container }
+      onClick={ selectedPokemon }
       style={{ backgroundColor: colors[`${types[0]}TypeBackground`]}}>
       <div className={ styles.container__info }>
         <div className={ styles.container__info_number}>

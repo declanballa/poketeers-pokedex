@@ -7,13 +7,27 @@
     ],
     "baseUrl": "./",
     "paths": {
-      "@styles/*": ["app/styles/*"],
-      "@icons/*": ["public/icons/*"],
-      "@images/*": ["public/images/*"],
-      "@components/*": ["app/components/*"],
-      "@store/*": ["app/store/*"],
-      "@models/*": ["app/models/*"],
-      "@services/*": ["app/services/*"]
+      "@styles/*": [
+        "styles/*"
+      ],
+      "@icons/*": [
+        "public/icons/*"
+      ],
+      "@images/*": [
+        "public/images/*"
+      ],
+      "@components/*": [
+        "components/*"
+      ],
+      "@store/*": [
+        "store/*"
+      ],
+      "@models/*": [
+        "app/models/*"
+      ],
+      "@services/*": [
+        "services/*"
+      ]
     },
     "allowJs": true,
     "skipLibCheck": true,
@@ -31,7 +45,8 @@
       {
         "name": "next"
       }
-    ]
+    ],
+    "strictNullChecks": false
   },
   "include": [
     "next-env.d.ts",

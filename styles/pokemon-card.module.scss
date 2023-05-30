@@ -2,7 +2,7 @@
 @import '@styles/typography.module.scss';
 
 .container {
-  background-image: url('../../../public/images/card-bg.png');
+  background-image: url('../public/images/card-bg.png');
   background-size: cover;
   border-radius: 10px;
   color: $text-white;
@@ -24,7 +24,7 @@
 
   &__info {
     float: left;
-    width: 62%;
+    width: 66%;
 
     &_number {
       color: rgba(23, 23, 27, 0.6);
@@ -41,7 +41,7 @@
 
   &__image {
     float: right;
-    width: 38%;
+    width: 34%;
     position: relative;
 
     & > img {

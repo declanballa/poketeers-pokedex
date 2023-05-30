@@ -3,9 +3,9 @@ import cn from 'classnames';
 
 import './button.scss';
 
-const Button = ({ type, labelText }) => {
+const Button = ({ labelText, onClick, type }) => {
   return (
-    <div className={cn('button', `button--${type}`) }>
+    <div className={cn('button', `button--${type}`)} onClick={ onClick }>
       <span className={ `button--${type}__label` }>
         { labelText }
       </span>

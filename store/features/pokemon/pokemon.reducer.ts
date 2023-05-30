@@ -9,14 +9,16 @@ import { Pokemon } from 'pokenode-ts';
 export interface PokemonState {
 	list: Pokemon[],
   searched: Pokemon[],
-	fetching: boolean,
+  selected: Pokemon,
+	loading: boolean,
   error: unknown
 }
 
 const initialState: PokemonState = {
   list: [],
   searched: [],
-  fetching: false,
+  selected: undefined,
+  loading: false,
   error: undefined
 } as PokemonState;
 
@@ -27,21 +29,21 @@ const pokemonReducer =
       .addCase(
         pokemonActions.GetPokemonList,
         (state: PokemonState) => {
-          state.fetching = true;
+          state.loading = true;
           state.error = undefined;
         }
       )
       .addCase(
         pokemonActions.GetPokemonListSuccess,
         (state: PokemonState, action) => {
-          state.fetching = false;
+          state.loading = false;
           state.list = action.payload.pokemon;
         }
       )
       .addCase(
         pokemonActions.GetPokemonListFailure,
         (state: PokemonState, action) => {
-          state.fetching = false;
+          state.loading = false;
           state.error = action.payload.error;
         }
       )
@@ -49,22 +51,36 @@ const pokemonReducer =
       .addCase(
         pokemonActions.GetPokemonByName,
         (state: PokemonState) => {
-          state.fetching = true;
+          state.loading = true;
           state.error = undefined;
         }
       )
       .addCase(
         pokemonActions.GetPokemonByNameSuccess,
         (state: PokemonState, action) => {
-          state.fetching = false;
+          state.loading = false;
           state.searched = [action.payload.pokemon, ...state.searched];
         }
       )
       .addCase(
         pokemonActions.GetPokemonByNameFailure,
         (state: PokemonState, action) => {
-          state.fetching = false;
+          state.loading = false;
           state.error = action.payload.error;
+        }
+      )
+      // CLEAR SEARCHED LIST
+      .addCase(
+        pokemonActions.ClearSearchedList,
+        (state: PokemonState) => {
+          state.searched = [];
+        }
+      )
+      // SET SELECTED POKEMON
+      .addCase(
+        pokemonActions.SetSelectedPokemon,
+        (state: PokemonState, action) => {
+          state.selected = action.payload.pokemon;
         }
       );
   });

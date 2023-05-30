@@ -5,7 +5,7 @@ import * as pokemonActions from './pokemon.action';
 import { ofType } from 'redux-observable';
 import { AjaxError } from 'rxjs/ajax';
 import { of } from 'rxjs';
-import * as pokemonApiService from './pokemon-api.service';
+import * as pokemonApiService from '../../../services/api/pokemon-api.service';
 import { Pokemon } from 'pokenode-ts';
 
 export const getPokemonListEpic =

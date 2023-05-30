@@ -75,3 +75,21 @@ export const GetPokemonByNameFailure =
       };
     }
   );
+
+export const ClearSearchedList =
+    createAction(
+      '[POKEMON] Clearing Searched List'
+    );
+
+
+export const SetSelectedPokemon =
+    createAction(
+      '[POKEMON] Setting selected pokemon',
+      function prepare(pokemon: Pokemon) {
+        return {
+          payload: {
+            pokemon
+          }
+        };
+      }
+    );
