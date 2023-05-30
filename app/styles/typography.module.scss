@@ -1,0 +1,43 @@
+@import './colors.module.scss';
+
+@mixin casing {
+  text-transform: capitalize;
+}
+
+@mixin title {
+  font-size: 100px;
+  font-weight: 700;
+  @include casing;
+}
+
+@mixin application-title {
+  font-size: 32px;
+  font-weight: 700;
+  @include casing;
+}
+
+@mixin pokemon-name {
+  font-weight: 700;
+  font-size: 2em;
+  line-height: 31px;
+  @include casing;
+}
+@mixin filter-title {
+  font-size: 16px;
+  font-weight: 700;
+  @include casing;
+}
+@mixin description {
+  color: $text-grey;
+}
+@mixin pokemon-number {
+  font-weight: 700;
+  font-size: 1.1em;
+  line-height: 14px;
+  @include casing;
+}
+@mixin pokemon-type {
+  font-size: 1.1em;
+  font-weight: 400;
+  @include casing;
+}

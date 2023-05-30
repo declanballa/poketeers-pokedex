@@ -8,16 +8,31 @@ import { of } from 'rxjs';
 import * as pokemonApiService from './pokemon-api.service';
 import { Pokemon } from 'pokenode-ts';
 
-export const getPokemonEpic =
+export const getPokemonListEpic =
   action$ =>
     action$.pipe(
-      ofType(pokemonActions.GetPokemonBySearchQuery),
-      switchMap((action: { type: string; payload: { searchQuery: string }}) =>
-        pokemonApiService.getPokemonByName(action.payload.searchQuery).pipe(
-          map((pokemon: Pokemon) =>
-            pokemonActions.GetPokemonBySearchQuerySuccess([pokemon])),
+      ofType(pokemonActions.GetPokemonList),
+      switchMap((action: { type: string, payload: { offset: number, limit: number}}) =>
+        pokemonApiService.getPokemonList(action.payload.offset, action.payload.limit).pipe(
+          map((pokemon: Pokemon[]) =>
+            pokemonActions.GetPokemonListSuccess(pokemon)),
           catchError((error: AjaxError) =>
-            of(pokemonActions.GetPokemonBySearchQueryFailure(error)))
+            of(pokemonActions.GetPokemonListFailure(error)))
+        )
+      )
+    );
+
+
+export const getPokemonByNameEpic =
+  action$ =>
+    action$.pipe(
+      ofType(pokemonActions.GetPokemonByName),
+      switchMap((action: { type: string, payload: { name: string }}) =>
+        pokemonApiService.getPokemonByName(action.payload.name).pipe(
+          map((pokemon: Pokemon) =>
+            pokemonActions.GetPokemonByNameSuccess(pokemon)),
+          catchError((error: AjaxError) =>
+            of(pokemonActions.GetPokemonByNameFailure(error)))
         )
       )
     );

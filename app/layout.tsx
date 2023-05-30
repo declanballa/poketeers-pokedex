@@ -3,8 +3,8 @@
 import React from 'react';
 import 'rxjs';
 
-import { roboto } from '../assets/fonts/roboto';
-import { Providers } from './store/provider';
+import { roboto } from 'public/fonts/roboto';
+import { Providers } from '@store/provider';
 
 import styles from '@styles/layout.module.scss';
 

@@ -7,13 +7,15 @@ import { Pokemon } from 'pokenode-ts';
 
 
 export interface PokemonState {
-	records: Pokemon[],
+	list: Pokemon[],
+  searched: Pokemon[],
 	fetching: boolean,
   error: unknown
 }
 
 const initialState: PokemonState = {
-  records: [],
+  list: [],
+  searched: [],
   fetching: false,
   error: undefined
 } as PokemonState;
@@ -21,22 +23,45 @@ const initialState: PokemonState = {
 const pokemonReducer =
   createReducer(initialState, (builder) => {
     builder
+      // GET POKEMON LIST
       .addCase(
-        pokemonActions.GetPokemonBySearchQuery,
+        pokemonActions.GetPokemonList,
         (state: PokemonState) => {
           state.fetching = true;
           state.error = undefined;
         }
       )
       .addCase(
-        pokemonActions.GetPokemonBySearchQuerySuccess,
+        pokemonActions.GetPokemonListSuccess,
         (state: PokemonState, action) => {
           state.fetching = false;
-          state.records = action.payload.pokemon;
+          state.list = action.payload.pokemon;
         }
       )
       .addCase(
-        pokemonActions.GetPokemonBySearchQueryFailure,
+        pokemonActions.GetPokemonListFailure,
+        (state: PokemonState, action) => {
+          state.fetching = false;
+          state.error = action.payload.error;
+        }
+      )
+      // GET POKEMON BY NAME
+      .addCase(
+        pokemonActions.GetPokemonByName,
+        (state: PokemonState) => {
+          state.fetching = true;
+          state.error = undefined;
+        }
+      )
+      .addCase(
+        pokemonActions.GetPokemonByNameSuccess,
+        (state: PokemonState, action) => {
+          state.fetching = false;
+          state.searched = [action.payload.pokemon, ...state.searched];
+        }
+      )
+      .addCase(
+        pokemonActions.GetPokemonByNameFailure,
         (state: PokemonState, action) => {
           state.fetching = false;
           state.error = action.payload.error;

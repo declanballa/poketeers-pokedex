@@ -1,0 +1,38 @@
+@import '@styles/colors.module.scss';
+
+.container {
+  width: 100%;
+
+  &__input {
+    padding: 15px 25px 15px 50px;
+    color: $text-grey;
+    font-size: 1em;
+    background: $background-default-input;
+    border-radius: 10px;
+    border: none;
+    background-image: url(../../../public/icons/search.svg);
+    background-repeat: no-repeat;
+    background-position: 15px;
+    width: 100%;
+
+    &:focus {
+      box-shadow: none;
+      border: none;
+      outline: 0;
+    }
+
+    &::-webkit-search-cancel-button {
+      -webkit-appearance: none;
+      display: inline-block;
+      width: 12px;
+      cursor: pointer;
+      height: 12px;
+      margin-left: 10px;
+      background:
+        linear-gradient(45deg, rgba(0,0,0,0) 0%,rgba(0,0,0,0) 43%,#000 45%,#000 55%,rgba(0,0,0,0) 57%,rgba(0,0,0,0) 100%),
+        linear-gradient(135deg, transparent 0%,transparent 43%,#000 45%,#000 55%,transparent 57%,transparent 100%);
+    }
+    
+  }
+
+}

@@ -2,8 +2,9 @@
 
 import { combineEpics } from 'redux-observable';
 
-import { getPokemonEpic } from './features/pokemon/pokemon.epic';
+import { getPokemonByNameEpic, getPokemonListEpic,  } from './features/pokemon/pokemon.epic';
 
 export const rootEpic = combineEpics(
-  getPokemonEpic
+  getPokemonByNameEpic,
+  getPokemonListEpic
 );
