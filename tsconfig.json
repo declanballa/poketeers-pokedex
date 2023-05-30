@@ -16,8 +16,14 @@
       "@images/*": [
         "public/images/*"
       ],
+      "@fonts/*": [
+        "public/fonts/*"
+      ],
       "@components/*": [
         "components/*"
+      ],
+      "@tests/*": [
+        "tests/*"
       ],
       "@store/*": [
         "store/*"
@@ -36,7 +42,7 @@
     "noEmit": true,
     "incremental": true,
     "esModuleInterop": true,
-    "module": "ESNext",
+    "module": "CommonJS",
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
@@ -52,7 +58,8 @@
     "next-env.d.ts",
     ".next/types/**/*.ts",
     "**/*.ts",
-    "**/*.tsx"
+    "**/*.tsx",
+    "@styles/*.module.scss"
   ],
   "exclude": [
     "node_modules"

@@ -1,12 +1,13 @@
 'use client';
 
 import { catchError, map, switchMap,  } from 'rxjs/operators';
-import * as pokemonActions from './pokemon.action';
+import { Pokemon } from 'pokenode-ts';
 import { ofType } from 'redux-observable';
 import { AjaxError } from 'rxjs/ajax';
 import { of } from 'rxjs';
-import * as pokemonApiService from '../../../services/api/pokemon-api.service';
-import { Pokemon } from 'pokenode-ts';
+
+import * as pokemonActions from './pokemon.action';
+import * as pokemonApiService from '@services/api/pokemon-api.service';
 
 export const getPokemonListEpic =
   action$ =>

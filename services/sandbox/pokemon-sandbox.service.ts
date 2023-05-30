@@ -1,8 +1,10 @@
 'use client';
 
-import { RootState, store } from 'store/app.store';
-import * as pokemonActions from 'store/features/pokemon/pokemon.action';
 import { Pokemon } from 'pokenode-ts';
+
+import { RootState, store } from '@store/app.store';
+import * as pokemonActions from '@store/features/pokemon/pokemon.action';
+
 
 export class PokemonSandboxService {
   // Selectors

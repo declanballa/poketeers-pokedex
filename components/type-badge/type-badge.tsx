@@ -1,5 +1,6 @@
+'use client';
 
-import { TypeIcon } from 'components/icon/icon';
+import { TypeIcon } from '@components/icon/icon';
 import styles from './type-badge.module.scss';
 import colors from '@styles/colors.module.scss';
 

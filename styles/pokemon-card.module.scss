@@ -22,23 +22,6 @@
     transform: scale(1.1);
   }
 
-  &__info {
-    float: left;
-    width: 66%;
-
-    &_number {
-      color: rgba(23, 23, 27, 0.6);
-      margin-bottom: .75em;
-      @include pokemon-number;
-    }
-
-    &_name {
-      margin-bottom: .25em;
-      @include pokemon-name;
-    }
-
-  }
-
   &__image {
     float: right;
     width: 34%;

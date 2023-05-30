@@ -1,10 +1,9 @@
 'use client';
 
 import { createReducer } from '@reduxjs/toolkit';
-
-import * as pokemonActions from './pokemon.action';
 import { Pokemon } from 'pokenode-ts';
 
+import * as pokemonActions from './pokemon.action';
 
 export interface PokemonState {
 	list: Pokemon[],

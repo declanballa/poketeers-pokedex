@@ -3,8 +3,8 @@
 import React from 'react';
 import 'rxjs';
 
-import { roboto } from 'public/fonts/roboto';
-import { Providers } from 'store/provider';
+import { roboto } from '@fonts/roboto';
+import { Providers } from '@store/provider';
 
 import styles from '@styles/layout.module.scss';
 
@@ -15,9 +15,7 @@ export default function RootLayout({
 }) {
 
   return (
-    <html
-      className={ roboto.className }
-      lang="en">
+    <html className={ roboto.className }>
       <body className={ styles.main }>
         <div className={ styles.container }>
           <Providers>

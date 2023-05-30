@@ -2,14 +2,14 @@
 
 import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
+import { useRouter } from 'next/navigation';
 import { Pokemon } from 'pokenode-ts';
 
 import { PokemonSandboxService } from '@services/sandbox/pokemon-sandbox.service';
 import { PokemonCard } from '@components/pokemon-card/pokemon-card';
 import { SearchInput } from '@components/search-input/search-input';
-import styles from '@styles/list.module.scss';
 import Button from '@components/button/button';
-import { useRouter } from 'next/navigation';
+import styles from '@styles/list.module.scss';
 
 const pokemonSandboxService = new PokemonSandboxService();
 
