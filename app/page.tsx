@@ -52,8 +52,8 @@ export default function List() {
                 type={ 'primary' } />
             </li>
             {
-              searched.map((pokemon: Pokemon) =>
-                <li key={ pokemon.name }>
+              searched.map((pokemon: Pokemon, index: number) =>
+                <li key={ `${pokemon.id}-${index}` }>
                   <PokemonCard
                     pokemon={ pokemon }
                     setSelectedPokemon={ setSelectPokemon } />
