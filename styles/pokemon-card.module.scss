@@ -1,5 +1,6 @@
 @import '@styles/colors.module.scss';
 @import '@styles/typography.module.scss';
+@import '@styles/mobile.module.scss';
 
 .container {
   background-image: url('../public/images/card-bg.png');
@@ -27,7 +28,7 @@
     width: 34%;
     position: relative;
 
-    @media only screen and (max-width: 520px) {
+    @include target-mobile {
       width: 30%;
     }
 

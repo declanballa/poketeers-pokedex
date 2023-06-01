@@ -31,10 +31,7 @@ const Drawer = ({ pokemon, species, evolutionChain }: { pokemon: Pokemon, specie
     }
   }
 
-  const setSelectedPokmeon = (event) => {
-    pokemonSandboxService.getPokemonByName(event.target.innerText.toLowerCase(), true);
-    window.scrollTo({top: 0, behavior: 'smooth'});
-  };
+  const setSelectedPokmeon = (event) => pokemonSandboxService.getPokemonByName(event.target.innerText.toLowerCase(), true);
   
   return (
     <div className={ styles.container }>
