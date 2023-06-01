@@ -9,6 +9,7 @@
   overflow: auto;
 
   @include target-mobile {
+    height: fit-content;
     border-radius: 0;
   }
 
