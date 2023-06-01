@@ -1,7 +1,7 @@
 'use client';
 
 import { createAction } from '@reduxjs/toolkit';
-import { Pokemon } from 'pokenode-ts';
+import { EvolutionChain, Pokemon, PokemonSpecies } from 'pokenode-ts';
 import { AjaxError } from 'rxjs/ajax';
 
 export const GetPokemonList =
@@ -40,19 +40,19 @@ export const GetPokemonListFailure =
     }
   );
 
-export const GetPokemonByName = 
-    createAction(
-      '[POKEMON] Getting Pokemon by name',
-      function prepare(name: string) {
-        return {
-          payload: {
-            name
-          }
-        };
-      }
-    );
+export const GetPokemonByName =
+  createAction(
+    '[POKEMON] Getting Pokemon by name',
+    function prepare(name: string, selected = false) {
+      return {
+        payload: {
+          name, selected
+        }
+      };
+    }
+  );
 
-export const GetPokemonByNameSuccess = 
+export const GetPokemonByNameSuccess =
   createAction(
     '[POKEMON] Getting Pokemon by name succeeded',
     function prepare(pokemon: Pokemon) {
@@ -77,19 +77,79 @@ export const GetPokemonByNameFailure =
   );
 
 export const ClearSearchedList =
-    createAction(
-      '[POKEMON] Clearing Searched List'
-    );
+  createAction(
+    '[POKEMON] Clearing Searched List'
+  );
 
 
 export const SetSelectedPokemon =
-    createAction(
-      '[POKEMON] Setting selected pokemon',
-      function prepare(pokemon: Pokemon) {
-        return {
-          payload: {
-            pokemon
-          }
-        };
-      }
-    );
+  createAction(
+    '[POKEMON] Setting selected pokemon',
+    function prepare(pokemon: Pokemon) {
+      return {
+        payload: {
+          pokemon
+        }
+      };
+    }
+  );
+
+export const SetSelectedPokemonSuccess =
+  createAction(
+    '[POKEMON] Setting selected pokemon succeeded',
+    function prepare(species: PokemonSpecies) {
+      return {
+        payload: {
+          species
+        }
+      };
+    }
+  );
+
+export const SetSelectedPokemonFailure =
+  createAction(
+    '[POKEMON] Getting Pokemon failed',
+    function prepare(error: AjaxError) {
+      return {
+        payload: {
+          error
+        }
+      };
+    }
+  );
+
+export const GetSelectedPokemonEvolutionChainByUrl =
+  createAction(
+    '[POKEMON] Getting Pokemon evolution chain by url',
+    function prepare(url: string) {
+      return {
+        payload: {
+          url
+        }
+      };
+    }
+  );
+
+export const GetSelectedPokemonEvolutionChainByUrlSuccess =
+  createAction(
+    '[POKEMON] Getting Pokemon evolution chain by url succeeded',
+    function prepare(chain: EvolutionChain) {
+      return {
+        payload: {
+          chain
+        }
+      };
+    }
+  );
+
+export const GetSelectedPokemonEvolutionChainByUrlFailure =
+  createAction(
+    '[POKEMON] Getting Pokemon evolution chain by url failed',
+    function prepare(error: AjaxError) {
+      return {
+        payload: {
+          error
+        }
+      };
+    }
+  );

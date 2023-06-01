@@ -1,17 +1,29 @@
-import renderer from 'react-test-renderer';
+import 'jsdom-global/register';
 import Button from '@components/button/button';
+import { shallow, ShallowWrapper } from 'enzyme';
+
+
+const testOnClick = () => { /* Dummy function */ };
 
 describe('when button component renders', () => {
-  it('should match snapshot', () => {
-    const component = renderer.create(
+  let wrapper: ShallowWrapper;
+
+  beforeEach(() => {
+    wrapper = shallow(
       <Button
         labelText={ 'Test'}
-        onClick={ onclick }
+        onClick={ testOnClick }
         type={ 'grass' } />
     );
+  });
 
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+
+  it('should match snapshot', () => {
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it('should be possible to open menu with Spacebar', () => {
+    //
   });
 });
 

@@ -1,0 +1,44 @@
+@import './colors.module.scss';
+
+.container {
+  text-align: center;
+  float: left;
+  width: 100%;
+  margin: 20px 0;
+  font-size: 0.75em;
+  letter-spacing: .25px;
+
+  div {
+
+    a {
+      color: #989b9d;
+    }
+
+    &:first-child {
+      color: #5d5f63;
+      margin-bottom: 12px;
+      font-size: 1.05em;
+
+      img {
+        width: 17px;
+        height: 14px;
+        padding-right: 3px;
+      }
+
+    }
+
+    &:last-child {
+      color: #989b9d;
+      font-size: .95em;
+      text-transform: uppercase;
+
+      span {
+        display: inline;
+
+      }
+
+    }
+
+  }
+
+}

@@ -1,6 +1,6 @@
 'use client';
 
-import { NamedAPIResource, NamedAPIResourceList, Pokemon } from 'pokenode-ts';
+import { EvolutionChain, NamedAPIResource, NamedAPIResourceList, Pokemon, PokemonSpecies } from 'pokenode-ts';
 import { forkJoin, map, Observable, switchMap  } from 'rxjs';
 import { ajax } from 'rxjs/ajax';
 
@@ -23,6 +23,16 @@ export const getPokemonByName = (name: string): Observable<Pokemon> => {
   const url = `${apiBaseUrl}/pokemon/${name}`;
 
   return ajax.getJSON<Pokemon>(url).pipe();
+};
+
+export const getPokemonSpeciesById = (id: number): Observable<PokemonSpecies> => {
+  const url = `${apiBaseUrl}/pokemon-species/${id}`;
+
+  return ajax.getJSON<PokemonSpecies>(url).pipe();
+};
+
+export const getPokemonEvolutionChainByUrl = (url: string): Observable<EvolutionChain> => {
+  return ajax.getJSON<EvolutionChain>(url).pipe();
 };
 
 // internal functions for calling api and forming data:

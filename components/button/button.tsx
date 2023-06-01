@@ -2,12 +2,12 @@
 
 import cn from 'classnames';
 
-import styles from '@styles/button.module.scss';
+import '@styles/button.scss';
 
 const Button = ({ labelText, onClick, type }) => {
   return (
     <div
-      className={cn(styles.button, `button--${type}`)}
+      className={cn('button', `button--${type}`)}
       onClick={ onClick }>
       <span className={ `button--${type}__label` }>
         { labelText }

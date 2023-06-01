@@ -29,7 +29,7 @@
         "store/*"
       ],
       "@models/*": [
-        "app/models/*"
+        "models/*"
       ],
       "@services/*": [
         "services/*"

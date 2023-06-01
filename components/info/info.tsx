@@ -1,7 +1,6 @@
 import { TypeBadge } from '@components/type-badge/type-badge';
 import styles from '@styles/pokemon-info.module.scss';
 
-
 const PokemonInfo = ({ id, name, types }) => {
   let numberPrefix = '#';
 

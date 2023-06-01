@@ -6,6 +6,10 @@ const createJestConfig = nextJest({
 });
 const customJestConfig = {
   moduleDirectories: ['node_modules', '<rootDir>/'],
-  testEnvironment: 'jest-environment-jsdom',
+  testEnvironment: 'node',
+  snapshotSerializers: [
+    'enzyme-to-json/serializer'
+  ],
+  setupFiles: ['./setupTests.js']
 };
 module.exports = createJestConfig(customJestConfig);

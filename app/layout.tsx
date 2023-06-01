@@ -7,6 +7,7 @@ import { roboto } from '@fonts/roboto';
 import { Providers } from '@store/provider';
 
 import styles from '@styles/layout.module.scss';
+import Footer from '@components/footer/footer';
 
 export default function RootLayout({
   children,
@@ -20,6 +21,7 @@ export default function RootLayout({
         <div className={ styles.container }>
           <Providers>
             { children }
+            <Footer />
           </Providers>
         </div>
       </body>

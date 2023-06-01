@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import { Pokemon, PokemonType } from 'pokenode-ts';
 
-import PokemonInfo from '@components/pokemon-info/pokemon-info';
+import PokemonInfo from '@components/info/info';
 import styles from '@styles/pokemon-card.module.scss';
 import colors from '@styles/colors.module.scss';
 
