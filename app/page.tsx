@@ -43,7 +43,7 @@ export default function List() {
         <SearchInput searchPokemon={ searchPokemon } />
       </div>
       <div className={ styles.list }>
-        { searched.length > 0 ?
+        { searched?.length > 0 ?
           <ul>
             <li className={ styles.clear_button}>
               <Button
@@ -65,7 +65,7 @@ export default function List() {
         }
         <ul>
           {
-            list.map((pokemon: Pokemon) =>
+            list?.map((pokemon: Pokemon) =>
               <li key={ pokemon.name }>
                 <PokemonCard
                   pokemon={ pokemon }

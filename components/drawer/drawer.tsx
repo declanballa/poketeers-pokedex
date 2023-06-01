@@ -44,7 +44,7 @@ const Drawer = ({ pokemon, species, evolutionChain }: { pokemon: Pokemon, specie
         <ul>
           <li><ul>
             <li>Species</li>
-            <li>{ englishSpeciesEntry.genus }</li>
+            <li>{ englishSpeciesEntry?.genus }</li>
           </ul></li>
           <li><ul>
             <li>Height</li>
