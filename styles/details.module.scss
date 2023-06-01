@@ -1,3 +1,4 @@
+@import './mobile.module.scss';
 
 .main {
   width: 100%;
@@ -6,6 +7,10 @@
   padding-top: 75px; /// padding for back button
   border-radius: 10px;
   overflow: auto;
+
+  @include target-mobile {
+    border-radius: 0;
+  }
 
   &__back {
     position: absolute;

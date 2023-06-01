@@ -1,5 +1,6 @@
 @import '@styles/colors.module.scss';
 @import '@styles/typography.module.scss';
+@import '@styles/mobile.module.scss';
 
 .container {
   background-image: url('../public/images/card-bg.png');
@@ -26,6 +27,10 @@
     float: right;
     width: 34%;
     position: relative;
+
+    @include target-mobile {
+      width: 30%;
+    }
 
     & > img {
       position: absolute;
