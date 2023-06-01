@@ -1,5 +1,3 @@
-@import './mobile.module.scss';
-
 .main {
   width: 100%;
   height: 100%;
@@ -8,7 +6,7 @@
   border-radius: 10px;
   overflow: auto;
 
-  @include target-mobile {
+  @media only screen and (max-width: 520px) {
     border-radius: 0;
   }
 
