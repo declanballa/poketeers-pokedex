@@ -2,6 +2,8 @@
 
 A modern pokedex to use on your next journey! A fully responsive React application built with React.js, redux, rjxs and rexux-observables, leveraging the public PokéApi.
 
+Production Url: https://www.poketeers.com/
+
 ## Development server
 
 Run `npm run dev` for a dev server. Navigate to `http://localhost:3000/`. The app will automatically reload if you change any of the source files.
