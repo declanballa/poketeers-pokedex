@@ -1,9 +1,11 @@
 import { EvolutionChain, Pokemon, PokemonAbility, PokemonMove, PokemonSpecies, PokemonType } from 'pokenode-ts';
 
+import { PokemonSandboxService } from 'services/sandbox/pokemon-sandbox.service';
+import { Button } from '@components/button/button.component';
 import styles from '@styles/drawer.module.scss';
 import colors from '@styles/colors.module.scss';
-import Button from '@components/button/button';
-import { PokemonSandboxService } from '@services/sandbox/pokemon-sandbox.service';
+
+
 
 const pokemonSandboxService = new PokemonSandboxService();
 
@@ -22,7 +24,7 @@ const Drawer = ({ pokemon, species, evolutionChain }: { pokemon: Pokemon, specie
   pokemonLevelUpMoves.sort((a, b) => a.version_group_details[0].level_learned_at - b.version_group_details[0].level_learned_at);
   const pokemonHasEvolutionChain = evolutionChain?.chain.evolves_to.length > 0;
   const pokemonEvolutionNames = [evolutionChain?.chain.species.name];
-  
+
   if (evolutionChain?.chain.evolves_to.length > 0) { // 2nd gen
     pokemonEvolutionNames.push(evolutionChain.chain.evolves_to[0].species.name);
 
@@ -33,48 +35,48 @@ const Drawer = ({ pokemon, species, evolutionChain }: { pokemon: Pokemon, specie
 
   const setSelectedPokmeon = (event) => {
     pokemonSandboxService.getPokemonByName(event.target.innerText.toLowerCase(), true);
-    window.scrollTo({top: 0, behavior: 'smooth'});
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
-  
+
   return (
-    <div className={ styles.container }>
-      <p>{ englishFlavorEntry?.flavor_text }</p>
-      <div className={ styles.container__section }>
-        <h2 style={ titleStyle }>Pokedex Data</h2>
+    <div className={styles.container}>
+      <p>{englishFlavorEntry?.flavor_text}</p>
+      <div className={styles.container__section}>
+        <h2 style={titleStyle}>Pokedex Data</h2>
         <ul>
           <li><ul>
             <li>Species</li>
-            <li>{ englishSpeciesEntry?.genus }</li>
+            <li>{englishSpeciesEntry?.genus}</li>
           </ul></li>
           <li><ul>
             <li>Height</li>
-            <li>{ `${pokemonMeters} m (~${pokemonFeet} ft)` }</li>
+            <li>{`${pokemonMeters} m (~${pokemonFeet} ft)`}</li>
           </ul></li>
           <li><ul>
             <li>Weight</li>
-            <li>{ `${pokemonKilograms} kg (~${pokemonPounds} lbs)` }</li>
+            <li>{`${pokemonKilograms} kg (~${pokemonPounds} lbs)`}</li>
           </ul></li>
           <li><ul>
             <li>Abilities</li>
-            <li>{ pokemon.abilities.map((ability: PokemonAbility) => ability.ability.name.replace('-', ' ')).join(', ')}</li>
+            <li>{pokemon.abilities.map((ability: PokemonAbility) => ability.ability.name.replace('-', ' ')).join(', ')}</li>
           </ul></li>
         </ul>
       </div>
-      <div className={ styles.container__section }>
+      <div className={styles.container__section}>
         <h2 style={titleStyle}>Evolutions</h2>
-        { pokemonHasEvolutionChain ?
+        {pokemonHasEvolutionChain ?
           pokemonEvolutionNames.map((name: string) =>
-            <Button  key={ name } labelText={ name} onClick={ setSelectedPokmeon } type={ 'primary' } />
+            <Button key={name} labelText={name} onClick={setSelectedPokmeon} type={'primary'} />
           ) :
           <p>This pokemon does not have an evolution chain.</p>
         }
       </div>
-      <div className={ styles.container__section }>
+      <div className={styles.container__section}>
         <h2 style={titleStyle}>Moves <span>(Level up only)</span></h2>
         <ul>
           {
             pokemonLevelUpMoves.map((move: PokemonMove) =>
-              <li key={ move.move.name }><span>({ move.version_group_details[0].level_learned_at }) </span>{ move.move.name.replace('-', ' ') }</li>
+              <li key={move.move.name}><span>({move.version_group_details[0].level_learned_at}) </span>{move.move.name.replace('-', ' ')}</li>
             )
           }
         </ul>

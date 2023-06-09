@@ -2,8 +2,8 @@
 
 import { EvolutionChain, Pokemon, PokemonSpecies } from 'pokenode-ts';
 
-import { RootState, store } from '@store/app.store';
-import * as pokemonActions from '@store/features/pokemon/pokemon.action';
+import { RootState, store } from 'store/app.store';
+import * as pokemonActions from 'store/features/pokemon/pokemon.action';
 
 
 export class PokemonSandboxService {

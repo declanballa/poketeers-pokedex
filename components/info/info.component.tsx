@@ -1,4 +1,4 @@
-import { TypeBadge } from '@components/type-badge/type-badge';
+import { TypeBadge } from '@components/type-badge/type-badge.component';
 import styles from '@styles/pokemon-info.module.scss';
 
 const PokemonInfo = ({ id, name, types }) => {

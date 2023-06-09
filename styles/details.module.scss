@@ -18,7 +18,7 @@
     top: 0;
     left: 0;
     width: 20%;
-    background-image: url('../public/icons/back.svg');
+    background-image: url(../public/icons/back.svg);
     background-repeat: no-repeat;
     background-position: center;
     height: 75px;
@@ -28,7 +28,7 @@
   &__hero {
     float: left;
     width: 100%;
-    background-image: url('../public/images/pattern.png');
+    background-image: url(../public/images/pattern.png);
     background-repeat: no-repeat;
     background-position: bottom right;
     padding-bottom: 25px;
@@ -37,7 +37,7 @@
       float: left;
       width: 45%;
       text-align: center;
-      background-image: url('../public/images/circle.png');
+      background-image: url(../public/images/circle.png);
       background-repeat: no-repeat;
       background-position: bottom;
 

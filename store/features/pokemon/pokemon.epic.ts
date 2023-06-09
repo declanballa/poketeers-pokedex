@@ -7,7 +7,7 @@ import { AjaxError } from 'rxjs/ajax';
 import { concat, of } from 'rxjs';
 
 import * as pokemonActions from './pokemon.action';
-import * as pokemonApiService from '@services/api/pokemon-api.service';
+import * as pokemonApiService from 'services/api/pokemon-api.service';
 
 export const getPokemonListEpic =
   action$ =>

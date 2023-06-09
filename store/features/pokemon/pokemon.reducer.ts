@@ -4,13 +4,13 @@ import { createReducer } from '@reduxjs/toolkit';
 import { Pokemon } from 'pokenode-ts';
 
 import * as pokemonActions from './pokemon.action';
-import { SelectedPokemon } from '@models/selected-pokemon.model';
+import { SelectedPokemon } from 'models/selected-pokemon.model';
 
 export interface PokemonState {
-	list: Pokemon[],
+  list: Pokemon[],
   searched: Pokemon[],
   selected: SelectedPokemon,
-	loading: boolean,
+  loading: boolean,
   error: unknown
 }
 

@@ -1,15 +1,15 @@
 /* eslint-disable @next/next/no-img-element */
 'use client';
 
-import { PokemonSandboxService } from '@services/sandbox/pokemon-sandbox.service';
 import { useSelector } from 'react-redux';
-
-import styles from '@styles/details.module.scss';
-import { PokemonType } from 'pokenode-ts';
-import PokemonInfo from '@components/info/info';
-import colors from '@styles/colors.module.scss';
 import { useRouter } from 'next/navigation';
-import Drawer from '@components/drawer/drawer';
+import { PokemonType } from 'pokenode-ts';
+
+import { PokemonSandboxService } from 'services/sandbox/pokemon-sandbox.service';
+import PokemonInfo from '@components/info/info.component';
+import Drawer from '@components/drawer/drawer.component';
+import colors from '@styles/colors.module.scss';
+import styles from '@styles/details.module.scss';
 
 
 const pokemonSandboxService = new PokemonSandboxService();
@@ -20,7 +20,7 @@ export default function Details() {
   const selectedEvolutionChain = useSelector(pokemonSandboxService.pokemonEvolutionChainSelected);
   const types = selected?.types?.map((type: PokemonType) => type.type.name);
   const router = useRouter();
-  
+
   const handleOnClick = () => router.back();
 
   return (
@@ -29,10 +29,10 @@ export default function Details() {
       style={{ backgroundColor: colors[`${types[0]}TypeBackground`] }}>
       <span
         className={styles.main__back}
-        onClick={ handleOnClick }></span>
+        onClick={handleOnClick}></span>
       <div className={styles.main__hero}>
         <div className={styles.main__hero_sprite}>
-          <img alt={ selected.name } src={ selected.sprites.other['official-artwork'].front_default } />
+          <img alt={selected.name} src={selected.sprites.other['official-artwork'].front_default} />
         </div>
         <div className={styles.main__hero_info}>
           <PokemonInfo
@@ -42,9 +42,9 @@ export default function Details() {
         </div>
       </div>
       <Drawer
-        evolutionChain={ selectedEvolutionChain }
-        pokemon={ selected }
-        species={ selectedSpecies } />
+        evolutionChain={selectedEvolutionChain}
+        pokemon={selected}
+        species={selectedSpecies} />
     </div>
   );
 }

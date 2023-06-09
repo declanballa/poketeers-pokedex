@@ -1,7 +1,7 @@
 'use client';
 
 import { EvolutionChain, NamedAPIResource, NamedAPIResourceList, Pokemon, PokemonSpecies } from 'pokenode-ts';
-import { forkJoin, map, Observable, switchMap  } from 'rxjs';
+import { forkJoin, map, Observable, switchMap } from 'rxjs';
 import { ajax } from 'rxjs/ajax';
 
 const apiBaseUrl = 'https://pokeapi.co/api/v2';
@@ -11,8 +11,8 @@ export const getPokemonList = (offset = 0, limit = 9): Observable<Pokemon[]> => 
   const pokemonAPIResources$ = getPokemonNamedAPIResources(offset, limit);
 
   return pokemonAPIResources$.pipe(
-    switchMap((resources: NamedAPIResource[]) => 
-      forkJoin(resources.map((resource: NamedAPIResource) => 
+    switchMap((resources: NamedAPIResource[]) =>
+      forkJoin(resources.map((resource: NamedAPIResource) =>
         getPokemonDetailsByNamedAPIResource(resource)
       ))
     )

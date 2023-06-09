@@ -1,6 +1,6 @@
 'use client';
 
-import { TypeIcon } from '@components/icon/icon';
+import { TypeIcon } from '@components/icon/icon.component';
 import styles from '@styles/type-badge.module.scss';
 import colors from '@styles/colors.module.scss';
 
@@ -8,7 +8,7 @@ export const TypeBadge = ({ types }: { types: string[]}) => {
   return (
     <>
       {
-        types.map((type: string) =>
+        types?.map((type: string) =>
           <div
             className={ styles.container }
             key={type}

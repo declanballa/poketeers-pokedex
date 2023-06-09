@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`when TypeButton component renders should match snapshot 1`] = `
+<Fragment>
+  <div
+    className="container"
+    key="grass"
+    style={
+      {
+        "backgroundColor": "grassType",
+      }
+    }
+  >
+    <TypeIcon
+      type="grass"
+    />
+    <div
+      className="container__type"
+    >
+      grass
+    </div>
+  </div>
+  <div
+    className="container"
+    key="poison"
+    style={
+      {
+        "backgroundColor": "poisonType",
+      }
+    }
+  >
+    <TypeIcon
+      type="poison"
+    />
+    <div
+      className="container__type"
+    >
+      poison
+    </div>
+  </div>
+</Fragment>
+`;

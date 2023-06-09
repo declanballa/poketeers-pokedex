@@ -4,8 +4,8 @@
 
 .search {
   float: left;
-  width: 88%;
-  padding: 10% 6% 4% 6%;
+  width: 90%;
+  padding: 10% 5% 5% 5%;
   min-height: 100px;
 
   h1 {
@@ -14,7 +14,7 @@
   }
 
   p {
-    padding-right: 20%;
+    padding-right: 10%;
     padding-bottom: 2%;
     @include description;
   }

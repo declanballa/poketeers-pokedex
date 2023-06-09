@@ -6,10 +6,11 @@ import { useRouter } from 'next/navigation';
 import { Pokemon } from 'pokenode-ts';
 
 import { PokemonSandboxService } from '@services/sandbox/pokemon-sandbox.service';
-import { PokemonCard } from '@components/card/card';
-import { SearchInput } from '@components/search-input/search-input';
-import Button from '@components/button/button';
-import styles from '@styles/list.module.scss';
+import { PokemonCard } from '@components/card/card.component';
+import { SearchInput } from '@components/search-input/search-input.component';
+import { Button } from '@components/button/button.component';
+
+import listStyles from '@styles/list.module.scss';
 
 const pokemonSandboxService = new PokemonSandboxService();
 
@@ -37,15 +38,16 @@ export default function List() {
   
   return (
     <>
-      <div className={ styles.search }>
-        <h1>Poketeers! Pokedex</h1>
-        <p>Search for Pokemon by name or using the National Pokedex number.</p>
+      <div className={ listStyles.search }>
+        <h1>Poketeers!</h1>
+        <p>A modern pokedex app to track all your pokemon game adventures.</p>
+        <br /><br /><br /><br />
         <SearchInput searchPokemon={ searchPokemon } />
       </div>
-      <div className={ styles.list }>
+      <div className={ listStyles.list }>
         { searched?.length > 0 ?
           <ul>
-            <li className={ styles.clear_button}>
+            <li className={ listStyles.clear_button}>
               <Button
                 labelText={ 'Clear Search History' }
                 onClick={ clearSearchHistory }

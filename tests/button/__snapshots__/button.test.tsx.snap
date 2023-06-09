@@ -3,7 +3,7 @@
 exports[`when button component renders should match snapshot 1`] = `
 <div
   className="button button--grass"
-  onClick={[Function]}
+  onClick={[MockFunction]}
 >
   <span
     className="button--grass__label"

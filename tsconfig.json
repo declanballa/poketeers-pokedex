@@ -10,15 +10,6 @@
       "@styles/*": [
         "styles/*"
       ],
-      "@icons/*": [
-        "public/icons/*"
-      ],
-      "@images/*": [
-        "public/images/*"
-      ],
-      "@fonts/*": [
-        "public/fonts/*"
-      ],
       "@components/*": [
         "components/*"
       ],
@@ -33,7 +24,16 @@
       ],
       "@services/*": [
         "services/*"
-      ]
+      ],
+      "@icons/*": [
+        "public/icons/*"
+      ],
+      "@images/*": [
+        "public/images/*"
+      ],
+      "@fonts/*": [
+        "public/fonts/*"
+      ],
     },
     "allowJs": true,
     "skipLibCheck": true,

@@ -1,10 +1,9 @@
 'use client';
 
-import { combineReducers, configureStore  } from '@reduxjs/toolkit';
+import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import { createEpicMiddleware } from 'redux-observable';
-import { persistReducer } from 'redux-persist';
-import persistStore from 'redux-persist/es/persistStore';
-import storage from 'redux-persist/es/storage';
+import { persistReducer, persistStore } from 'redux-persist';
+import storage from 'redux-persist/lib/storage';
 
 import pokemonReducer from './features/pokemon/pokemon.reducer';
 import { rootEpic } from './root.epic';

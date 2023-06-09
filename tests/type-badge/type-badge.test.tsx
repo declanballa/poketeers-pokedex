@@ -1,21 +1,18 @@
 import 'jsdom-global/register';
-import { Button } from '@components/button/button.component';
 import { shallow, ShallowWrapper } from 'enzyme';
+import { TypeBadge } from '@components/type-badge/type-badge.component';
 
-describe('when button component renders', () => {
+describe('when TypeButton component renders', () => {
   let wrapper: ShallowWrapper;
 
   beforeEach(() => {
     wrapper = shallow(
-      <Button
-        labelText={'Test'}
-        onClick={jest.fn()}
-        type={'grass'} />
+      <TypeBadge types={['grass', 'poison']} />
     );
   });
-
 
   it('should match snapshot', () => {
     expect(wrapper).toMatchSnapshot();
   });
 });
+

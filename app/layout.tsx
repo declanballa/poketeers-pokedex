@@ -5,9 +5,8 @@ import 'rxjs';
 
 import { roboto } from '@fonts/roboto';
 import { Providers } from '@store/provider';
-
 import styles from '@styles/layout.module.scss';
-import Footer from '@components/footer/footer';
+import Footer from '@components/footer/footer.component';
 
 export default function RootLayout({
   children,
@@ -16,11 +15,11 @@ export default function RootLayout({
 }) {
 
   return (
-    <html className={ roboto.className }>
-      <body className={ styles.main }>
-        <div className={ styles.container }>
+    <html className={roboto.className}>
+      <body className={styles.main}>
+        <div className={styles.container}>
           <Providers>
-            { children }
+            {children}
             <Footer />
           </Providers>
         </div>
